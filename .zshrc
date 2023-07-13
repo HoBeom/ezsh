@@ -31,11 +31,3 @@ source $ZSH/oh-my-zsh.sh
 export FZF_DEFAULT_OPS="--extended"
 
 alias k="k -h"       # show human readable file sizes, in kb, mb etc
-
-alias p="python"
-alias c="conda"
-alias gg="google"
-alias ww="watch -n 0.5 nvidia-smi"
-alias wd="watch -n 1 du -hs *"
-alias gpu="gpustat -i"
-alias nn="nmon"
