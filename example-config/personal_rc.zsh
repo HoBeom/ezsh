@@ -8,3 +8,10 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(virtualenv status command_execution_time bac
 
 
 # Custom Aliases, add your personal aliases here
+
+alias p="python"
+alias c="conda"
+alias gg="google"
+alias ww="watch -n 1 nvidia-smi"
+alias wd="watch -n 1 du -hs *"
+alias gpu="gpustat -i"
