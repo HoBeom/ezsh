@@ -69,6 +69,11 @@ else
     git clone --depth=1 https://github.com/zsh-users/zsh-history-substring-search ~/.config/ezsh/oh-my-zsh/custom/plugins/zsh-history-substring-search
 fi
 
+if [ -d ~/.config/ezsh/oh-my-zsh/custom/plugins/zsh-wakatime ]; then
+    cd ~/.config/ezsh/oh-my-zsh/custom/plugins/zsh-wakatime && git pull
+else
+    git clone --depth=1 https://github.com/wbingli/zsh-wakatime ~/.config/ezsh/oh-my-zsh/custom/plugins/zsh-wakatime
+fi
 
 # INSTALL FONTS
 

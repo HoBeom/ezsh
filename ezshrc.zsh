@@ -87,15 +87,15 @@ plugins=(
     extract
     z
     sudo
-    # httpie
-    # git
-    # python
+    httpie
+    git
+    python
     # docker
-    # lol
+    lol
     # pip
     # pyenv
     # redis-cli
-    # zsh-wakatime          # enable if you use wakatime with 'https://github.com/wbingli/zsh-wakatime'
+    zsh-wakatime          # enable if you use wakatime with 'https://github.com/wbingli/zsh-wakatime'
     )
 #plugins+=(zsh-nvm)
 

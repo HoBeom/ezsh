@@ -6,6 +6,7 @@ plugins+=(lol httpie docker docker-compose pyenv pip)
 
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(virtualenv status command_execution_time background_jobs todo ram load rvm time)
 
+export ZSH_WAKATIME_PROJECT_DETECTION=true
 
 # Custom Aliases, add your personal aliases here
 
