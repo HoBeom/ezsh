@@ -87,10 +87,11 @@ plugins=(
     extract
     z
     sudo
-    # httpie
-    # git
-    # python
-    # docker
+    httpie
+    git
+    python
+    docker
+    tmux
     # lol
     # pip
     # pyenv
