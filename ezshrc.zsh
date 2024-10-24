@@ -77,9 +77,10 @@ POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
     zsh-completions
-    # zsh-autosuggestions     # disable when using marker, otherwise enable
+    zsh-autosuggestions     # disable when using marker, otherwise enable
     zsh-syntax-highlighting
     history-substring-search
+    tmux
     screen
     systemd
     web-search
@@ -90,7 +91,7 @@ plugins=(
     # httpie
     # git
     # python
-    # docker
+    docker
     # lol
     # pip
     # pyenv
@@ -138,7 +139,7 @@ export PATH=$PATH:~/.config/ezsh/bin
 NPM_PACKAGES="${HOME}/.npm"
 PATH="$NPM_PACKAGES/bin:$PATH"
 
-[[ -s "$HOME/.config/ezsh/marker/marker.sh" ]] && source "$HOME/.config/ezsh/marker/marker.sh"
+# [[ -s "$HOME/.config/ezsh/marker/marker.sh" ]] && source "$HOME/.config/ezsh/marker/marker.sh"
 
 autoload -U compinit && compinit -C -d ~/.cache/zsh/.zcompdump        # zsh-completions
 # autoload bashcompinit                 # bash completions
