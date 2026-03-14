@@ -92,3 +92,5 @@ fi
 if [[ -s "$BUN_INSTALL/_bun" ]]; then
   source "$BUN_INSTALL/_bun"
 fi
+
+export PATH="$PATH:/opt/nvim/"
