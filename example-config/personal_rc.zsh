@@ -55,8 +55,12 @@ fi
 SECRETS_DIR="$HOME/.secrets"
 if [[ -d "$SECRETS_DIR" ]]; then
   for f in "$SECRETS_DIR"/*.zsh(N); do
-    source "$f"
+    [[ -r "$f" ]] && source "$f"
   done
+fi
+
+if [[ -x "$HOME/.config/ezsh/fzf/bin/fzf" ]]; then
+  export PATH="$HOME/.config/ezsh/fzf/bin:$PATH"
 fi
 
 export FZF_CTRL_T_OPTS="
@@ -94,3 +98,36 @@ if [[ -s "$BUN_INSTALL/_bun" ]]; then
 fi
 
 export PATH="$PATH:/opt/nvim/"
+
+export NVM_DIR="${XDG_CONFIG_HOME:-$HOME/.nvm}"
+
+if [[ -s "$NVM_DIR/nvm.sh" ]]; then
+  _load_nvm() {
+    source "$NVM_DIR/nvm.sh"
+    nvm use default >/dev/null 2>&1
+  }
+
+  nvm() {
+    unset -f nvm node npm npx
+    _load_nvm
+    nvm "$@"
+  }
+
+  node() {
+    unset -f nvm node npm npx
+    _load_nvm
+    node "$@"
+  }
+
+  npm() {
+    unset -f nvm node npm npx
+    _load_nvm
+    npm "$@"
+  }
+
+  npx() {
+    unset -f nvm node npm npx
+    _load_nvm
+    npx "$@"
+  }
+fi
