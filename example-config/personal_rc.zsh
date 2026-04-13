@@ -102,32 +102,39 @@ export PATH="$PATH:/opt/nvim/"
 export NVM_DIR="${XDG_CONFIG_HOME:-$HOME/.nvm}"
 
 if [[ -s "$NVM_DIR/nvm.sh" ]]; then
-  _load_nvm() {
+  if [[ -n "$SSH_CONNECTION" ]]; then
+    # SSH: load immediately so node/npm/codex work in non-interactive commands
     source "$NVM_DIR/nvm.sh"
     nvm use default >/dev/null 2>&1
-  }
+  else
+    # Local: lazy load for fast shell startup
+    _load_nvm() {
+      source "$NVM_DIR/nvm.sh"
+      nvm use default >/dev/null 2>&1
+    }
 
-  nvm() {
-    unset -f nvm node npm npx
-    _load_nvm
-    nvm "$@"
-  }
+    nvm() {
+      unset -f nvm node npm npx
+      _load_nvm
+      nvm "$@"
+    }
 
-  node() {
-    unset -f nvm node npm npx
-    _load_nvm
-    node "$@"
-  }
+    node() {
+      unset -f nvm node npm npx
+      _load_nvm
+      node "$@"
+    }
 
-  npm() {
-    unset -f nvm node npm npx
-    _load_nvm
-    npm "$@"
-  }
+    npm() {
+      unset -f nvm node npm npx
+      _load_nvm
+      npm "$@"
+    }
 
-  npx() {
-    unset -f nvm node npm npx
-    _load_nvm
-    npx "$@"
-  }
+    npx() {
+      unset -f nvm node npm npx
+      _load_nvm
+      npx "$@"
+    }
+  fi
 fi
